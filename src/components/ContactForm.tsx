@@ -18,8 +18,8 @@ const schema = z.object({
   phone: z
     .string()
     .regex(/^[6-9]\d{9}$/, "Please enter a valid 10-digit Indian mobile number"),
-  interest: z.enum(["buy", "sell", "rent", "invest", "other"], {
-    errorMap: () => ({ message: "Please select your interest" }),
+  interest: z.enum(["buy", "sell", "rent", "invest", "other"] as const, {
+    message: "Please select your interest",
   }),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });

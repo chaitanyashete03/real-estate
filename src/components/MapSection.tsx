@@ -21,7 +21,6 @@ export function MapSection() {
     const initMap = async () => {
       // Dynamic import to avoid SSR
       const L = (await import("leaflet")).default;
-      await import("leaflet/dist/leaflet.css");
 
       // Fix Leaflet's default icon path issue in Next.js
       delete (L.Icon.Default.prototype as { _getIconUrl?: unknown })._getIconUrl;
