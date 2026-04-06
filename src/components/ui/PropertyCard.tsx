@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 
 interface PropertyProps {
   id: string;
+  slug: string;
   title: string;
   location: string;
   price: string;
@@ -20,6 +21,7 @@ interface PropertyProps {
 
 export function PropertyCard({
   id,
+  slug,
   title,
   location,
   price,
@@ -95,11 +97,11 @@ export function PropertyCard({
 
         {/* Price & Action */}
         <div className="mt-auto flex items-center justify-between">
-          <div className="text-primary group-hover:invisible">
+          <div className="text-primary transition-opacity group-hover:opacity-0">
             <p className="text-xs text-gray-500">Starting from</p>
             <p className="text-xl font-bold">{price}</p>
           </div>
-          <Link href={`/property/${id}`}>
+          <Link href={`/properties/${slug}`}>
             <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               View Details
             </Button>
